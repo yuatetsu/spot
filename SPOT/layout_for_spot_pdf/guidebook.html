@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+</head>
+
+<body onload="initialize();">
+  <div id="content" class="guidebook">
+
+    <div class="head_wrapper">
+      <h1>Sed ut perspiciatis unde omnis iste natus error sit</h1>
+      <p class="date">2014/10/11</p>
+    </div>
+
+    <div class="variable">
+      <div class="guide_item">
+
+        <div class="date_title">
+        <h2>1st day <span>This is 1st day title</span></h2>
+        </div>
+
+        <!-- //横並び1つ（地図だけ）
+        <div class="wrapper picture-none">
+          <div class="box"><img src="http://maps.googleapis.com/maps/api/staticmap?center=34.687216,135.525799&zoom=13&size=670x220&scale=1&maptype=roadmap&markers=color:red%7Clabel:T%7C34.687216,135.525799&sensor=false" width="670" height="220"></div>
+        </div>
+        -->
+
+        <!-- //横並び2つ -->
+        <div class="wrapper picture-1">
+          <div class="box"><img src="./images/dummy3.jpg" style="background-image: url(./images/dummy3.jpg);" width="200" height="220" border="0" class="picture"></div>
+          <div class="box"><img src="http://maps.googleapis.com/maps/api/staticmap?center=34.687216,135.525799&zoom=13&size=332x220&scale=1&maptype=roadmap&markers=color:red%7Clabel:T%7C34.687216,135.525799&sensor=false"></div>
+        </div>
+
+        <!-- //横並び3つ
+        <div class="wrapper picture-2">
+          <div class="box"><img src="./images/dummy3.jpg" style="background-image: url(./images/dummy3.jpg);" width="200" height="220" border="0" class="picture"></div>
+          <div class="box"><img src="./images/dummy2.jpg" style="background-image: url(./images/dummy2.jpg);" width="220" height="220" border="0" class="picture"></div>
+          <div class="box"><img src="http://maps.googleapis.com/maps/api/staticmap?center=34.687216,135.525799&zoom=13&size=220x220&scale=1&maptype=roadmap&markers=color:red%7Clabel:T%7C34.687216,135.525799&sensor=false"></div>
+        </div> -->
+
+        <div class="spot_info">
+          <div class="spot_info_top">
+            <p class="spot_info_spotname">spot name spot name spot name spot name</p>
+            <p class="spot_info_address">Address : Sed ut perspiciatis unde omnis istte natus error sit volutptatem</p>
+            <div class="wrapper">
+              <p class="spot_info_tel">TEL : 03-1234-5678</p>
+              <p class="spot_info_url">URL : http://playsense.me</p>
+            </div>
+            <p class="spot_info_memo">
+              But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself</p>
+            
+            <!-- //train -->
+            <p class="spot_info_traffic">Distance from start spot : <span class="traffic_train">10km</span></p>
+
+            <!-- //other traffic
+            <p class="spot_info_traffic">Distance from start spot : <span class="traffic_car">10km</span></p>
+            <p class="spot_info_traffic">Distance from start spot : <span class="traffic_airplane">10km</span></p>
+            <p class="spot_info_traffic">Distance from start spot : <span class="traffic_walk">10km</span></p>
+            <p class="spot_info_traffic">Distance from start spot : <span class="traffic_bus">10km</span></p>
+            -->
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="guide_item">
+
+        <!-- //写真が2枚の場合 -->
+        <div class="wrapper picture-2">
+          <div class="box"><img src="./images/dummy1.jpg" style="background-image: url(./images/dummy1.jpg);" width="220" height="220" border="0" class="picture"></div>
+          <div class="box"><img src="./images/dummy2.jpg" style="background-image: url(./images/dummy2.jpg);" width="220" height="220" border="0" class="picture"></div>
+          <div class="box"><img src="http://maps.googleapis.com/maps/api/staticmap?center=34.687216,135.525799&zoom=13&size=220x220&scale=1&maptype=roadmap&markers=color:red%7Clabel:T%7C34.687216,135.525799&sensor=false"></div>
+        </div>
+
+        <div class="spot_info">
+          <div class="spot_info_top">
+            <p class="spot_info_spotname">spot name spot name spot name spot name</p>
+            <p class="spot_info_address">Address : Sed ut perspiciatis unde omnis istte natus error sit volutptatem</p>
+            <div class="wrapper">
+              <p class="spot_info_tel">TEL : 03-1234-5678</p>
+              <p class="spot_info_url">URL : http://playsense.me</p>
+            </div>
+            <p class="spot_info_memo">
+              But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself</p>
+            
+            <p class="spot_info_traffic">Distance from A : <span class="traffic_bus">10km</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="guide_item">
+
+        <!-- //写真が2枚の場合 -->
+        <div class="wrapper picture-2">
+          <div class="box"><img src="./images/dummy1.jpg" style="background-image: url(./images/dummy1.jpg);" width="220" height="220" border="0" class="picture"></div>
+          <div class="box"><img src="./images/dummy2.jpg" style="background-image: url(./images/dummy2.jpg);" width="220" height="220" border="0" class="picture"></div>
+          <div class="box"><img src="http://maps.googleapis.com/maps/api/staticmap?center=34.687216,135.525799&zoom=13&size=220x220&scale=1&maptype=roadmap&markers=color:red%7Clabel:T%7C34.687216,135.525799&sensor=false"></div>
+        </div>
+
+        <div class="spot_info">
+          <div class="spot_info_top">
+            <p class="spot_info_spotname">spot name spot name spot name spot name</p>
+            <p class="spot_info_address">Address : Sed ut perspiciatis unde omnis istte natus error sit volutptatem</p>
+            <div class="wrapper">
+              <p class="spot_info_tel">TEL : 03-1234-5678</p>
+              <p class="spot_info_url">URL : http://playsense.me</p>
+            </div>
+            <p class="spot_info_memo">
+              But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself</p>
+            
+            <p class="spot_info_traffic">Distance from A : <span class="traffic_bus">10km</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="guide_memo">
+        <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself</p>
+
+      </div>
+
+    </div>
+
+    <div class="copyright">06/06/2014 - Created by SPOT</div>
+
+  </div>
+</body>
+</html>

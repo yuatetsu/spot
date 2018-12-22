@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6244" systemVersion="13F34" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="BannerShow" representedClassName="BannerShow" syncable="YES">
+        <attribute name="shouldShow" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
+    <entity name="CheckIn" representedClassName="CheckIn" syncable="YES">
+        <attribute name="last_checkin_date" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="spot" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SPOT" inverseName="checkin" inverseEntity="SPOT" syncable="YES"/>
+    </entity>
+    <entity name="Country" representedClassName="Country" syncable="YES">
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="spot" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SPOT" inverseName="country" inverseEntity="SPOT" syncable="YES"/>
+    </entity>
+    <entity name="FileJournal" representedClassName="FileJournal" syncable="YES">
+        <attribute name="file_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="last_modified_dropbox" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="last_modified_local" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="last_modified_time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="FoursquareUser" representedClassName="FoursquareUser" syncable="YES">
+        <attribute name="last_checkin" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="GuideBook" representedClassName="GuideBook" syncable="YES">
+        <attribute name="foursquare_spot_lat" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="foursquare_spot_lng" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="foursquare_spot_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guide_book_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pdf_file_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="start_date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="start_spot_selected_from_foursquare" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="guide_book_info" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GuideBookInfo" inverseName="guide_book" inverseEntity="GuideBookInfo" syncable="YES"/>
+        <relationship name="start_spot" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SPOT" inverseName="start_spot_for_guide_book" inverseEntity="SPOT" syncable="YES"/>
+    </entity>
+    <entity name="GuideBookInfo" representedClassName="GuideBookInfo" syncable="YES">
+        <attribute name="day_from_start_day" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="info_type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="memo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="trafic_time" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="guide_book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GuideBook" inverseName="guide_book_info" inverseEntity="GuideBook" syncable="YES"/>
+        <relationship name="spot" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SPOT" inverseName="guide_book_info" inverseEntity="SPOT" syncable="YES"/>
+    </entity>
+    <entity name="Image" representedClassName="Image" syncable="YES">
+        <attribute name="image_file_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image_size" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="is_name_card" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="origin_image_file_name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="spot" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SPOT" inverseName="image" inverseEntity="SPOT" syncable="YES"/>
+    </entity>
+    <entity name="Region" representedClassName="Region" syncable="YES">
+        <attribute name="region" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="spot" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SPOT" inverseName="region" inverseEntity="SPOT" syncable="YES"/>
+    </entity>
+    <entity name="SPOT" representedClassName="SPOT" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="is_need_create_xml" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lng" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="memo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="month" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="pdf_file_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="spot_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="spot_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="start_spot_lat" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="start_spot_lng" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="start_spot_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnail_file_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time_line_image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="traffic" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="4" defaultValueString="0" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="checkin" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CheckIn" inverseName="spot" inverseEntity="CheckIn" syncable="YES"/>
+        <relationship name="country" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="spot" inverseEntity="Country" syncable="YES"/>
+        <relationship name="guide_book_info" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GuideBookInfo" inverseName="spot" inverseEntity="GuideBookInfo" syncable="YES"/>
+        <relationship name="image" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Image" inverseName="spot" inverseEntity="Image" syncable="YES"/>
+        <relationship name="region" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Region" inverseName="spot" inverseEntity="Region" syncable="YES"/>
+        <relationship name="start_spot" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SPOT" inverseName="start_spot" inverseEntity="SPOT" syncable="YES"/>
+        <relationship name="start_spot_for_guide_book" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GuideBook" inverseName="start_spot" inverseEntity="GuideBook" syncable="YES"/>
+        <relationship name="tag" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="spot" inverseEntity="Tag" syncable="YES"/>
+        <relationship name="voice" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Voice" inverseName="spot" inverseEntity="Voice" syncable="YES"/>
+    </entity>
+    <entity name="Tag" representedClassName="Tag" syncable="YES">
+        <attribute name="spot_count" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="tag" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="spot" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SPOT" inverseName="tag" inverseEntity="SPOT" syncable="YES"/>
+    </entity>
+    <entity name="Voice" representedClassName="Voice" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="spot" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SPOT" inverseName="voice" inverseEntity="SPOT" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CheckIn" positionX="115" positionY="36" width="128" height="73"/>
+        <element name="Country" positionX="-18" positionY="144" width="128" height="73"/>
+        <element name="FileJournal" positionX="-18" positionY="144" width="128" height="88"/>
+        <element name="FoursquareUser" positionX="25" positionY="429" width="128" height="75"/>
+        <element name="GuideBook" positionX="304" positionY="-153" width="128" height="195"/>
+        <element name="GuideBookInfo" positionX="288" positionY="153" width="128" height="150"/>
+        <element name="Image" positionX="36" positionY="-135" width="128" height="120"/>
+        <element name="Region" positionX="27" positionY="323" width="128" height="73"/>
+        <element name="SPOT" positionX="-281" positionY="-72" width="128" height="463"/>
+        <element name="Tag" positionX="-90" positionY="-207" width="128" height="88"/>
+        <element name="Voice" positionX="-243" positionY="461" width="128" height="103"/>
+        <element name="BannerShow" positionX="9" positionY="0" width="128" height="58"/>
+    </elements>
+</model>
